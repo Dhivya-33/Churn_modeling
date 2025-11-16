@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bank Churn Prediction</title>
+    <style>
+        body { font-family: Arial; background: #f2f2f2; padding: 20px; }
+        .container { background: white; padding: 25px; width: 420px; margin: auto; border-radius: 10px; }
+        input { width: 100%; padding: 10px; margin-top: 10px; }
+        button { width: 100%; padding: 10px; background: green; color: white; margin-top: 15px; }
+        h2 { text-align: center; }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Bank Customer Churn Prediction</h2>
+        <form action="/predict" method="post">
+
+            <input type="text" name="CreditScore" placeholder="Credit Score" required>
+            <input type="text" name="Age" placeholder="Age" required>
+            <input type="text" name="Tenure" placeholder="Tenure" required>
+            <input type="text" name="Balance" placeholder="Balance" required>
+            <input type="text" name="NumOfProducts" placeholder="Number of Products" required>
+            <input type="text" name="HasCrCard" placeholder="Has Credit Card (1/0)" required>
+            <input type="text" name="IsActiveMember" placeholder="Active Member (1/0)" required>
+            <input type="text" name="EstimatedSalary" placeholder="Estimated Salary" required>
+
+            <input type="text" name="Geography_Germany" placeholder="Is Germany? (1/0)" required>
+            <input type="text" name="Geography_Spain" placeholder="Is Spain? (1/0)" required>
+            <input type="text" name="Gender_Male" placeholder="Male? (1/0)" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <h3>{{ prediction_text }}</h3>
+    </div>
+</body>
+
+</html>
